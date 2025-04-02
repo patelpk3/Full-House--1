@@ -1,0 +1,1 @@
+For first iteration we need Room and player class developed, and we need the ability go from room to room, and get 12 clues to win. For now we will have placeholder clues that are just returned when the user inputs "clue".
