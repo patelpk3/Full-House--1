@@ -32,6 +32,12 @@ public class clue {
             System.out.println("This clue doesn't have a puzzle.");
         }
     }
+
+    
+    // Shows clue description
+    public void clueDescription() {
+        System.out.println("Clue Description: " + description);
+    }
     
     
 }
