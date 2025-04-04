@@ -16,6 +16,11 @@ public class clue {
         this.imagePath = imagePath;
         this.description = description;
     }
+
+    // Getter for puzzleComplete
+    public boolean isPuzzleComplete() {
+        return puzzleComplete;
+    }
     
     
 }
