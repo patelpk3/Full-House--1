@@ -51,6 +51,17 @@ public class clue {
         frame.setLocationRelativeTo(null);  // center of screen
         frame.setVisible(true);
     }
+
+    // For testing
+    public static void main(String[] args) {
+        Clue kingSuiteClue = new Clue(true, "images/kingsuite_clue.png",
+                "A folded piece of paper under the nightstand. It reads: 'The last card lies in velvet.'");
+
+        kingSuiteClue.clueDescription();
+
+        // Simulate solving the puzzle
+        kingSuiteClue.completePuzzle();
+    }
     
     
 }
