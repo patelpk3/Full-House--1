@@ -21,6 +21,17 @@ public class clue {
     public boolean isPuzzleComplete() {
         return puzzleComplete;
     }
+
+    // Set puzzle as complete
+    public void completePuzzle() {
+        if (hasPuzzle) {
+            this.puzzleComplete = true;
+            System.out.println("Puzzle solved! You found a clue!");
+            showClueImage();
+        } else {
+            System.out.println("This clue doesn't have a puzzle.");
+        }
+    }
     
     
 }
