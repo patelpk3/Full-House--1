@@ -32,11 +32,24 @@ public class clue {
             System.out.println("This clue doesn't have a puzzle.");
         }
     }
-
     
     // Shows clue description
     public void clueDescription() {
         System.out.println("Clue Description: " + description);
+    }
+    
+    // Show image in popup
+    private void showClueImage() {
+        JFrame frame = new JFrame("Clue Found!");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        ImageIcon clueIcon = new ImageIcon(imagePath);
+        JLabel label = new JLabel(clueIcon);
+
+        frame.getContentPane().add(label, BorderLayout.CENTER);
+        frame.pack();
+        frame.setLocationRelativeTo(null);  // center of screen
+        frame.setVisible(true);
     }
     
     
