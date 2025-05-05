@@ -1,1 +1,1 @@
-For first iteration we need Room and player class developed, and we need the ability go from room to room, and get 12 clues to win. For now we will have placeholder clues that are just returned when the user inputs "clue".
+The main method is located in the FullHouse.java file. The necessary java files to run the project is Clue, FullHouse, Player, Puzzle, Room, blackjack, and dice. 
