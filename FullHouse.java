@@ -63,7 +63,7 @@ public class FullHouse {
         System.out.println("Welcome to Full House!");
         player.intro();
         int i = 0;
-        currentRoom = rooms[i];
+        
 
         while (true) {
 
@@ -78,13 +78,33 @@ public class FullHouse {
                 break;
             }
             
-            if (currentRoom.roomComplete) {
+            if (currentRoom.roomComplete == true) {
                 i++;
                 
                 System.out.println("\n--- You enter a new area ---");
             }
             
+            currentRoom = rooms[i];
             currentRoom.describeRoom();
+            if (currentRoom.getRoomClue().getClueKey().equals("dice")) {
+                boolean win = false;
+                do {
+                    win = Clue.dice();
+                    System.out.println("Try again!");
+                    player.setMoves(player.getMoves() + 1);
+                    if (player.getMoves() >= MAX_MOVES) {
+                        System.out.println("Too many moves taken. You've lost the game!");
+                        break;
+                    }
+                } while (!win);
+            } else if (currentRoom.getRoomClue().getClueKey().equals("blackJack")) {
+                boolean win = false;
+                do {
+                     win = Clue.blackJack();
+                     System.out.println("Try again!");
+                     player.setMoves(player.getMoves() + 1);
+                } while (!win);
+            }
             System.out.print("What will you do now? ");
             String command = scanner.nextLine().toLowerCase();
             handleCommand(command);
@@ -104,6 +124,7 @@ public class FullHouse {
                 boolean found = currentRoom.investigate(currentRoom.getRoomClue());
                 if (found) {
                     player.setCluesFound(player.getCluesFound() + 1);
+                    currentRoom.roomComplete = true;
                 } else {
                     System.out.println();
                 }

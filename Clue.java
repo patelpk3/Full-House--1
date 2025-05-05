@@ -146,7 +146,7 @@ public class Clue {
             this.clueDesc = roomMap[roomNum][0];
             this.clueKey = roomMap[roomNum][1];
         } else {
-            int roomNum = ((int) ((Math.random() * 8)) + 1);
+            int roomNum = ((int) ((Math.random() * 2)) + 8);
             this.hasPuzzle = hasPuzzle;
             this.puzzleComplete = false;
             this.clueDesc = roomMap[roomNum][0];
@@ -155,23 +155,28 @@ public class Clue {
 
     }
     
-    public static void blackJack() {
+    public static boolean blackJack() {
         blackjack puzzle = new blackjack();
         puzzle.playGame();
         if(puzzle.getUserWins()) {
             System.out.println("Puzzle solved! You found a clue!");
+            return true;
         } else {
             System.out.println("You lost...");
+            return false;
         }
     }
     
-    public static void dice() {
+    public static boolean dice() {
         dice puzzle = new dice();
+        
         puzzle.playGame();
         if(puzzle.getUserWins()) {
             System.out.println("Puzzle solved! You found a clue!");
+            return true;
         } else {
             System.out.println("You lost...");
+            return false;
         }
     }
     /**
