@@ -78,7 +78,7 @@ public class FullHouse {
                 break;
             }
             
-            if (!currentRoom.roomComplete) {
+            if (currentRoom.roomComplete) {
                 i++;
                 
                 System.out.println("\n--- You enter a new area ---");
