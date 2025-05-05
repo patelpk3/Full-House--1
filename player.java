@@ -11,16 +11,28 @@ package fullHouse;
  * Tracks the player progress through the moves made with the clues found.
  */
 public class Player {
+    Scanner key = new Scanner(System.in);
+    
     private int moves; // The number of moves the player has made
     private int cluesFound; // The number of clues the player has found
+
+    /**
+    * constructor
+    */
+    public Player(int moves, int cluesFound) {
+        this.cluesFound = cluesFound;
+        this.moves = moves;
+    }
 
     /**
      * Sets the number of clues found by the player.
      *
      * @param cluesFound number of clues found
      */
-    public void setCluesFound(int cluesFound) {
-        this.cluesFound = cluesFound;
+    public void setCluesFound(boolean clueFound) {
+        if(clueFound) {
+            cluesFound++;
+        }
     }
 
     /**
@@ -34,11 +46,9 @@ public class Player {
 
     /**
      * Sets the number of moves made by the player.
-     *
-     * @param moves number of moves made
      */
-    public void setMoves(int moves) {
-        this.moves = moves;
+    public void setMoves() {
+        moves++;
     }
 
     /**
@@ -54,14 +64,25 @@ public class Player {
      * Shows the introduction for the player.
      */
     public void intro() {
-        System.out.println("This is the intro method.");
+        System.out.println("Full House: A Game of Luck and Mystery.");
+        System.out.println("---------------------------------------");
+        System.out.println("\nThis game will test your mystery solving skills along with your luck in general.");
+        System.out.println("The goal of the game is to solve the mystery of what happened to your missing friend.");
+        System.out.println("The setting of your story is at a sketchy casino that seems to have everything work in favor of the house.");
+        System.out.println("\nYour friend has always been lucky, but this time he might have gotten too lucky.");
+        System.out.println("You will have to traverse through the rooms of the casino and find clues that lead you to the answer.");
+        System.out.println("But be careful: when you move around more and more throughout the casino, you will catch the suspection of security.");
+        System.out.println("As you gather clues, you will eventually be able to track down the disappearance of your friend and discover the truth.");
+        System.out.println("\nGood luck.");
     }
 
     /**
      * Shows help information for the player.
      */
-    public void help() {
-        System.out.println("This is the help method.");
+    public void help(String help) {
+        if(help.equals("?") || help.equals("help")) {
+            
+        }
     }
 
     /**
