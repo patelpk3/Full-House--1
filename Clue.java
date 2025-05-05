@@ -126,7 +126,7 @@ public class Clue {
     
     roomMap[10][0] = "You're here, you know it. The door creaks open to reveal"
             + " a suite dripping in quiet opulence. Soft jazz leaks from a Bluetooth speaker resting on the nightstand, where a half-empty bottle of top-shelf bourbon leans against a sweating glass. A velvet robe has been tossed across the armchair near the balcony, its belt coiled like a snake. The oversized bed is immaculately made—except for one corner, where the blanket is turned down ever so slightly. A deck of cards, mid-shuffle, lies fanned across the writing desk, though one is missing from the sequence. At the foot of the bed, a silver tray holds the remains of room service—cracked crab shells, lemon wedges, and a folded linen napkin stiff with dried butter. Suddenly, a man approaches you with dice in hand and asks for a game. You comply.";
-    roomMap[10][1] = "KingSuite";
+    roomMap[10][1] = "dice";
 
     
     }
@@ -155,8 +155,24 @@ public class Clue {
 
     }
     
-    public void blackJack() {
-        
+    public static void blackJack() {
+        blackjack puzzle = new blackjack();
+        puzzle.playGame();
+        if(puzzle.getUserWins()) {
+            System.out.println("Puzzle solved! You found a clue!");
+        } else {
+            System.out.println("You lost...");
+        }
+    }
+    
+    public static void dice() {
+        dice puzzle = new dice();
+        puzzle.playGame();
+        if(puzzle.getUserWins()) {
+            System.out.println("Puzzle solved! You found a clue!");
+        } else {
+            System.out.println("You lost...");
+        }
     }
     /**
      * Marks the puzzle as complete if it exists and displays the clue image in the room.
